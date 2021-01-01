@@ -1,10 +1,10 @@
-这个minicode实现了微信小程序的一些常用效果。
 [toc]
+这个minicode实现了微信小程序的一些常用效果。
 ## 自定义顶部导航
 
 ## 滚动锚点 scroll-anchor
 效果图如下：
-<img src="http://note.youdao.com/yws/public/resource/d1ba1c9e680e63f459034d3e2dd481cd/xmlnote/CD341878F87C4081BCDEDA68D8E40031/19699" width="375">
+![avatar](http://note.youdao.com/yws/public/resource/d1ba1c9e680e63f459034d3e2dd481cd/xmlnote/CD341878F87C4081BCDEDA68D8E40031/19699)
 ### 实现方案
 - 锚点的实现需要使用`scroll-view`组件，设置`scroll-into-view`属性值为对应节点元素的id。
 - 如果有tab需要在滚动时也进行相应的切换，需要判断节点是否出现在可视区域，此处使用了[createIntersectionObserver](https://developers.weixin.qq.com/miniprogram/dev/framework/view/selector.html)进行判断。
