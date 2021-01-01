@@ -1,11 +1,13 @@
 const { movieTabs } = require ('../../services/mockData')
 const App = getApp()
+let observer = null
 
 Page({
   data: {
     tabs: movieTabs,
     activeTab: 0,
     anchorId: '',
+    tabAnchorId: '',
     navTotalHeight: 0,
     scrollContentHt: 0,
     screenWidth: 0
@@ -13,16 +15,18 @@ Page({
 
   onLoad: function (options) {
     const { navTotalHeight, screen } = App.globalData
+    const tabCode = movieTabs[this.data.activeTab].code
     this.setData({
       navTotalHeight: navTotalHeight,
       scrollContentHt: screen.screenHeight - navTotalHeight,
       screenWidth: screen.screenWidth,
-      anchorId: movieTabs[this.data.activeTab].code
+      anchorId: tabCode,
+      tabAnchorId: `tab-${tabCode}`
     })
     this.observeSection()
   },
   observeSection() {
-    this.createIntersectionObserver({
+    observer = this.createIntersectionObserver({
       thresholds: [1],
       observeAll: true
     })
@@ -32,7 +36,8 @@ Page({
       const { index } = item.dataset
       if (this.data.activeTab !== index && item.intersectionRatio === 1) { // 注意需要判断是否出现在可视区域
         this.setData({
-          activeTab: index
+          activeTab: index,
+          tabAnchorId: `tab-${item.id}`
         })
       }
     })
@@ -40,10 +45,15 @@ Page({
   changeTab(e) {
     const { index } = e.currentTarget.dataset
     if (index !== this.data.activeTab) {
+      const tabCode = movieTabs[index].code
       this.setData({
         activeTab: index,
-        anchorId: this.data.tabs[index].code
+        anchorId: tabCode,
+        tabAnchorId: `tab-${tabCode}`
       })
     }
+  },
+  onUnload() {
+    observer && observer.disconnect()
   }
 })

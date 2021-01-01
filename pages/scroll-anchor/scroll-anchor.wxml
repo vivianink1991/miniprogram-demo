@@ -4,13 +4,16 @@
         class="tab-hd"
         style="top:{{navTotalHeight}}px;width:{{screenWidth}}px"
         scroll-x="{{true}}"
-        enable-flex="{{true}}">
+        enable-flex="{{true}}"
+        scroll-into-view="{{tabAnchorId}}"
+        scroll-with-animation="{{true}}">
         <view class="tab-hd-inner">
             <view 
                 wx:for="{{tabs}}"
                 wx:key="code"
                 data-index="{{index}}"
                 bindtap="changeTab"
+                id="tab-{{item.code}}"
                 class="tab-item {{activeTab === index ? 'active' : ''}}">
                 {{item.title}}
             </view>
