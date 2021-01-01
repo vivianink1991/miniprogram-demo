@@ -2,7 +2,7 @@
 [toc]
 ## 自定义顶部导航
 
-## 滚动锚点
+## 滚动锚点 scroll-anchor
 效果图如下：
 <img src="http://note.youdao.com/yws/public/resource/d1ba1c9e680e63f459034d3e2dd481cd/xmlnote/CD341878F87C4081BCDEDA68D8E40031/19699" width="375">
 ### 实现方案
