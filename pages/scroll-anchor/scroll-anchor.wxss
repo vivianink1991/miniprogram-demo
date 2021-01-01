@@ -1,10 +1,72 @@
 page {
   background: #000;
 }
-.tab-bd {
-  height: 100vh;
+.page-container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  bottom: 0px;
+  box-sizing: border-box;
+}
+.scroll-container {
+  box-sizing: border-box;
+  padding-top: 70rpx;
+  background: #000;
 }
 .tab-hd {
+  position: fixed;
+  left: 0px;
+  z-index: 9999;
+  box-sizing: border-box;
+  padding: 0rpx 30rpx 0;
+  background: rgba(0, 0, 0, 1);
+}
+.tab-hd-inner {
   display: flex;
-  overflow: auto;
+  flex-direction: row;
+}
+.tab-item {
+  flex: 1;
+  box-sizing: border-box;
+  height: 70rpx;
+  width: auto;
+  line-height: 70rpx;
+  padding: 0px 10rpx;
+  font-size: 14px;
+  color: #fff;
+  transition: .6s;
+  border-bottom: 1px solid transparent;
+  white-space: nowrap;
+}
+.tab-item.active {
+  border-color: #fff;
+}
+.tab-item + .tab-item {
+  margin-left: 15rpx;
+}
+.section {
+  padding: 40rpx 35rpx;
+}
+.section-hd {
+  font-size: 16px;
+  color: #9B9B9B;
+}
+.section-bd {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.movie-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 50%;
+  margin-top: 50rpx;
+}
+.poster-img {
+  width: 230rpx;
+  height: 320rpx;
 }

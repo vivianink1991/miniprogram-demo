@@ -1,58 +1,49 @@
 const { movieTabs } = require ('../../services/mockData')
+const App = getApp()
 
 Page({
-
-  /**
-   * Page initial data
-   */
   data: {
-    tabs: movieTabs
+    tabs: movieTabs,
+    activeTab: 0,
+    anchorId: '',
+    navTotalHeight: 0,
+    scrollContentHt: 0,
+    screenWidth: 0
   },
 
   onLoad: function (options) {
-
+    const { navTotalHeight, screen } = App.globalData
+    this.setData({
+      navTotalHeight: navTotalHeight,
+      scrollContentHt: screen.screenHeight - navTotalHeight,
+      screenWidth: screen.screenWidth,
+      anchorId: movieTabs[this.data.activeTab].code
+    })
+    this.observeSection()
   },
-
-  onReady: function () {
-
+  observeSection() {
+    this.createIntersectionObserver({
+      thresholds: [1],
+      observeAll: true
+    })
+    .relativeToViewport()
+    .observe('.section', (item) => {
+      console.log(item)
+      const { index } = item.dataset
+      if (this.data.activeTab !== index && item.intersectionRatio === 1) { // 注意需要判断是否出现在可视区域
+        this.setData({
+          activeTab: index
+        })
+      }
+    })
   },
-
-  onShow: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
+  changeTab(e) {
+    const { index } = e.currentTarget.dataset
+    if (index !== this.data.activeTab) {
+      this.setData({
+        activeTab: index,
+        anchorId: this.data.tabs[index].code
+      })
+    }
   }
 })

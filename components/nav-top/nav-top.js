@@ -27,6 +27,7 @@ Component({
     },
     lifetimes: {
         attached() {
+            console.log('properties', this.properties)
             const { navTotalHeight, menuBtnTopOffset, navSideGap } = App.globalData
             const pages = getCurrentPages()
             this.setData({
