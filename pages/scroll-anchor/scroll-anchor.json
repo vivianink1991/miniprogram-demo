@@ -1,0 +1,10 @@
+{
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTextStyle": "white", 
+  "navigationBarTitleText": "Movie",
+  "backgroundColor": "#000", 
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "nav-top": "/components/nav-top/nav-top"
+  }
+}

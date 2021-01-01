@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/scroll-anchor/scroll-anchor",
+    "pages/wxs-demo/index",
+    "pages/scroll-animation/index"
+  ],
+  "window":{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

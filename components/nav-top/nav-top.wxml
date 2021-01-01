@@ -1,0 +1,8 @@
+<view class="nav-top" style="height:{{navTotalHeight}}px;padding-top:{{menuBtnTopOffset}}px;background-color:rgba(0, 0, 0, {{opacity}}}});">
+    <view class="nav-top-inner">
+        <view class="nav-tool" wx:if="{{showNavTool}}" style="left:{{navSideGap}}px">
+            <image class="nav-icon" src="{{showHome ? '../../assets/icons/iconHome@3x.png' : '../../assets/icons/iconBack@3x.png'}}"/>
+        </view>
+        <view class="title" wx:if="{{title}}">{{title}}</view>
+    </view>
+</view>
