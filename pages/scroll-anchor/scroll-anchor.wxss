@@ -1,3 +1,10 @@
 page {
   background: #000;
 }
+.tab-bd {
+  height: 100vh;
+}
+.tab-hd {
+  display: flex;
+  overflow: auto;
+}

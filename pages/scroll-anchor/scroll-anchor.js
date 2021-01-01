@@ -1,30 +1,22 @@
-// pages/scroll-anchor/scroll-anchor.js
+const { movieTabs } = require ('../../services/mockData')
+
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
+    tabs: movieTabs
   },
 
-  /**
-   * Lifecycle function--Called when page load
-   */
   onLoad: function (options) {
 
   },
 
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
   onReady: function () {
 
   },
 
-  /**
-   * Lifecycle function--Called when page show
-   */
   onShow: function () {
 
   },

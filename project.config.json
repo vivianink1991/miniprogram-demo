@@ -1,5 +1,5 @@
 {
-	"description": "Project configuration file",
+	"description": "项目配置文件",
 	"packOptions": {
 		"ignore": []
 	},
@@ -7,16 +7,12 @@
 		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
-		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false,
-		"coverView": true,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.14.1",
+	"libVersion": "2.5.1",
 	"appid": "wx02f3dd11df7798dd",
 	"projectname": "miniprogram-animation",
 	"debugOptions": {
