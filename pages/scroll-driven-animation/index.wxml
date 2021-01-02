@@ -1,0 +1,19 @@
+<nav-top opacity="{{0}}"></nav-top>
+<scroll-view
+    id="scroller"
+    class="scroll-container"
+    scroll-y="{{true}}"
+    style="padding-top:{{navTotalHeight}}px">
+    <view class="scroll-inner">
+        <view class="section section_1">
+            <view class="title">{{contents.sectionOne.title}}</view>
+            <image class="img" src="{{contents.sectionOne.img}}" mode="widthFix"></image>
+            <view class="desc">{{contents.sectionOne.desc}}</view>
+        </view>
+        <view class="section section_2">
+            <view class="title">{{contents.sectionTwo.title}}</view>
+            <image class="img" src="{{contents.sectionTwo.img}}" mode="widthFix"></image>
+            <view class="desc">{{contents.sectionTwo.desc}}</view>
+        </view>
+    </view>
+</scroll-view>

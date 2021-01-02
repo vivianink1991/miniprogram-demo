@@ -12,7 +12,7 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.5.1",
+	"libVersion": "2.14.1",
 	"appid": "wx02f3dd11df7798dd",
 	"projectname": "miniprogram-animation",
 	"debugOptions": {

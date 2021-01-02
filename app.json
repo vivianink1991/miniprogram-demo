@@ -1,8 +1,8 @@
 {
   "pages":[
+    "pages/scroll-driven-animation/index",
     "pages/scroll-anchor/scroll-anchor",
-    "pages/wxs-demo/index",
-    "pages/scroll-animation/index"
+    "pages/wxs-demo/index"
   ],
   "window":{
     "backgroundTextStyle": "light",
