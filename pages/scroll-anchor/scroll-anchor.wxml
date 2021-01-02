@@ -34,8 +34,18 @@
             id="{{movie.code}}">
             <view class="section-hd">{{movie.title}}</view>
             <view class="section-bd">
-                <view class="movie-item" wx:for="{{movie.recommends}}" wx:key="index">
-                    <image src="{{item.poster}}" class="poster-img"></image>
+                <view
+                    class="movie-item  {{img.show ? 'flow' : ''}}"
+                    wx:for="{{movie.recommends}}"
+                    wx:for-index="imgIndex"
+                    wx:for-item="img"
+                    wx:key="imgIndex">
+                    <image
+                        data-tab-index="{{index}}"
+                        data-img-index="{{imgIndex}}"
+                        src="{{img.loaded ? img.poster : ''}}"
+                        class="poster-img">
+                    </image>
                 </view>
             </view>
         </view>

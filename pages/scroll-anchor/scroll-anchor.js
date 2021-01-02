@@ -1,6 +1,7 @@
 const { movieTabs } = require ('../../services/mockData')
 const App = getApp()
 let observer = null
+let oberserverItem = null
 
 Page({
   data: {
@@ -24,6 +25,7 @@ Page({
       tabAnchorId: `tab-${tabCode}`
     })
     this.observeSection()
+    this.obeserveItem()
   },
   observeSection() {
     observer = this.createIntersectionObserver({
@@ -32,7 +34,6 @@ Page({
     })
     .relativeToViewport()
     .observe('.section', (item) => {
-      console.log(item)
       const { index } = item.dataset
       if (this.data.activeTab !== index && item.intersectionRatio === 1) { // 注意需要判断是否出现在可视区域
         this.setData({
@@ -42,10 +43,32 @@ Page({
       }
     })
   },
+  obeserveItem() {
+    oberserverItem = this.createIntersectionObserver({
+      thresholds: [0.1, 0.8],
+      observeAll: true
+    })
+    .relativeToViewport()
+    .observe('.poster-img', item => {
+      const { tabIndex, imgIndex } = item.dataset
+      const loadKey = `tabs[${tabIndex}].recommends[${imgIndex}].loaded` // 注意修改数组的方法
+      if (!this.data[loadKey] && item.intersectionRatio >= 0.1) {
+        this.setData({
+          [loadKey]: true
+        })
+      }
+      const showKey = `tabs[${tabIndex}].recommends[${imgIndex}].show`
+      if (!this.data[showKey] && item.intersectionRatio >= 0.8) {
+        this.setData({
+          [showKey]: true
+        })
+      }
+    })
+  },
   changeTab(e) {
     const { index } = e.currentTarget.dataset
     if (index !== this.data.activeTab) {
-      const tabCode = movieTabs[index].code
+      const tabCode = this.data.tabs[index].code
       this.setData({
         activeTab: index,
         anchorId: tabCode,
@@ -55,5 +78,6 @@ Page({
   },
   onUnload() {
     observer && observer.disconnect()
+    oberserverItem && oberserverItem.disconnect()
   }
 })
