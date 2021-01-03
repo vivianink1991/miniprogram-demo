@@ -23,3 +23,7 @@ this.setData({
     [showKey]: true // 对象key值为变量的时候用[]包裹
 })
 ```
+
+## 滚动驱动动画 scroll-driven-animation
+- `startScrollOffset`和`endScrollOffset`的计算需要考量一下，我暂时是简单规定每个section都占满可视区域，即`screenHeight - navBarHeight`。
+- 问题：一个元素淡入淡出，`startScrollOffset`&`endScrollOffset`同keyframes中的offset如何做到匹配暂时还没想到方便的方法
