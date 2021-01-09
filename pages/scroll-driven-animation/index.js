@@ -38,7 +38,7 @@ Page({
   animateSectionOne(scrollInfo) {
     const { contentHeight } = this.data
     // section_1 title
-    this.animate('.section_1 .title', [
+    this.animate('.section-1 .title', [
       { 
         opacity: 0.8,
         transform: 'translateY(-10px)',
@@ -62,7 +62,7 @@ Page({
     })
 
     // section_1 img
-    this.animate('.section_1 .img', [
+    this.animate('.section-1 .img', [
       { 
         opacity: 0.8,
         transform: 'translateY(0%)',
@@ -86,7 +86,7 @@ Page({
     })
 
     // section_1 desc
-    this.animate('.section_1 .desc', [
+    this.animate('.section-1 .desc', [
       { 
         opacity: 0.8,
         transform: 'translateY(0%)',
@@ -114,7 +114,7 @@ Page({
     console.log('scrollInfo', scrollInfo)
     const { contentHeight } = this.data
     // section_2 title
-    this.animate('.section_2 .title', [
+    this.animate('.section-2 .title', [
       { 
         opacity: 0,
         transform: 'translateY(-10px) scale(0.8)',
@@ -138,7 +138,7 @@ Page({
     })
 
     // section_2 img
-    this.animate('.section_2 .img', [
+    this.animate('.section-2 .img', [
       { 
         opacity: 0,
         transform: 'translateY(-10px) scale(0.7)',
@@ -162,7 +162,7 @@ Page({
     })
 
     // section_2 desc
-    this.animate('.section_2 .desc', [
+    this.animate('.section-2 .desc', [
       { 
         opacity: 0,
         transform: 'translateY(0px)',
@@ -186,7 +186,7 @@ Page({
     })
 
     // section_2
-    this.animate('.section_2', [
+    this.animate('.section-2', [
       { 
         opacity: 1,
         // transform: 'translateY(-50px)',
@@ -208,43 +208,5 @@ Page({
       startScrollOffset: contentHeight * 1,
       endScrollOffset: contentHeight * 1.5
     })
-  },
-  onShow: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
   }
 })

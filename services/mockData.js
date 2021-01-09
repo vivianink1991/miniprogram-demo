@@ -204,6 +204,11 @@ const scrollMaterials = {
         title: 'Portraits that \n come out at night.',
         desc: 'Night mode portraitson the Wide camera give you vivid color, as well as beautiful bokeh that accentuates lit buildings, streetlights — any background lights.'
     }
+    // sectionThree: {
+    //     img: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fn.sinaimg.cn%2Fcollect%2Fcrawl%2F20171011%2FfzNz-fymrcmn0153757.jpg&refer=http%3A%2F%2Fn.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612183407&t=f965d4b659d1019e98de2dad9c78f014',
+    //     title: 'Portraits that \n come out at night.',
+    //     desc: 'Night mode portraitson the Wide camera give you vivid color, as well as beautiful bokeh that accentuates lit buildings, streetlights — any background lights.'
+    // }
 }
 module.exports = {
     movieTabs,

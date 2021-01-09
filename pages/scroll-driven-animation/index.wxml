@@ -6,14 +6,14 @@
     style="padding-top:{{navTotalHeight}}px"
     bindscroll="scrollHandler">
     <view class="scroll-inner">
-        <view class="section section_1" style="height:{{contentHeight}}px">
+        <view class="section section-1" style="height:{{contentHeight}}px">
             <view class="section_inner">
                 <view class="title">{{contents.sectionOne.title}}</view>
                 <image class="img" src="{{contents.sectionOne.img}}" mode="widthFix"></image>
                 <view class="desc">{{contents.sectionOne.desc}}</view>
             </view>
         </view>
-        <view class="section section_2" style="height:{{contentHeight}}px">
+        <view class="section section-2" style="height:{{contentHeight}}px">
             <view class="section_inner">
                 <view class="title">{{contents.sectionTwo.title}}</view>
                 <image class="img" src="{{contents.sectionTwo.img}}" mode="widthFix"></image>
